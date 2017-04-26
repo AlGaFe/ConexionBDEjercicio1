@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package conexionbdejercicio1;
 
 import com.mysql.jdbc.Connection;
@@ -19,10 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-/**
- *
- * @author daw
- */
+/* @author Álvaro García Fernández*/
 public class FXMLDocumentController implements Initializable {
         private Connection conn;
     private Label label;
@@ -87,25 +79,44 @@ public class FXMLDocumentController implements Initializable {
         
 
     @FXML
-    private void ActionButtonPrimero(ActionEvent event) {
+    private void ActionButtonPrimero(ActionEvent event) throws SQLException {
+          rs.first();
+         id = rs.getInt("id");
+         nombre = rs.getString("nombre");
+      
+        this.TextFliedID.setText(""+id);
+        this.TextFieldComunidad.setText(nombre);
     }
 
     @FXML
-    private void ActionButtonAnterior(ActionEvent event) {
+    private void ActionButtonAnterior(ActionEvent event) throws SQLException {
+        while(rs.isAfterLast()){
+               id = rs.getInt("id");
+         nombre = rs.getString("nombre");
+           this.TextFliedID.setText(""+id);
+        this.TextFieldComunidad.setText(nombre);
+        } 
     }
 
     @FXML
-    private void ActionButtonSiguiente(ActionEvent event) {
+    private void ActionButtonSiguiente(ActionEvent event) throws SQLException {
+        while(rs.next()){
+               id = rs.getInt("id");
+         nombre = rs.getString("nombre");
+           this.TextFliedID.setText(""+id);
+        this.TextFieldComunidad.setText(nombre);
+        } 
     }
 
     @FXML
     private void ActionButtonÚltimo(ActionEvent event) throws SQLException {
-         while(rs.last()){
+         rs.last();
              id = rs.getInt("id");
          nombre = rs.getString("nombre");
-        }
-        this.TextFliedID.setText(""+id);
+           this.TextFliedID.setText(""+id);
         this.TextFieldComunidad.setText(nombre);
+        
+      
     }
     }
     
