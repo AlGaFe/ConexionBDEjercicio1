@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="conexionbdejercicio1.FXMLDocumentController">
+   <children>
+      <Label fx:id="LabelID" layoutX="62.0" layoutY="52.0" prefHeight="29.0" prefWidth="69.0" text="Identificador" />
+      <TextField fx:id="TextFliedID" layoutX="131.0" layoutY="56.0" prefHeight="22.0" prefWidth="24.0" promptText="0" />
+      <Label fx:id="LabelTotalID" layoutX="172.0" layoutY="60.0" prefHeight="14.0" prefWidth="33.0" text="de 5" />
+      <Label fx:id="LabelConectado" layoutX="305.0" layoutY="58.0" prefHeight="18.0" prefWidth="76.0" text="Conectado" textFill="#39ff02">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="LabelComunidad" layoutX="62.0" layoutY="96.0" prefHeight="14.0" prefWidth="69.0" text="Comunidad" />
+      <TextField fx:id="TextFieldComunidad" layoutX="131.0" layoutY="92.0" prefHeight="22.0" prefWidth="285.0" promptText="Comunidad" />
+      <Separator layoutX="20.0" layoutY="141.0" prefHeight="0.0" prefWidth="426.0" />
+      <Button fx:id="ButtonPrimero" layoutX="48.0" layoutY="160.0" mnemonicParsing="false" onAction="#ActionButtonPrimero" text="Primero" />
+      <Button fx:id="ButtonAnterior" layoutX="148.0" layoutY="160.0" mnemonicParsing="false" onAction="#ActionButtonAnterior" text="Anterior" />
+      <Button fx:id="ButtonSiguiente" layoutX="257.0" layoutY="160.0" mnemonicParsing="false" onAction="#ActionButtonSiguiente" text="Siguiente" />
+      <Button fx:id="ButtonÚltimo" layoutX="366.0" layoutY="160.0" mnemonicParsing="false" onAction="#ActionButtonÚltimo" text="Último" />
+      <Label fx:id="LabeDesconectado" layoutX="293.0" layoutY="58.0" prefHeight="18.0" prefWidth="101.0" text="Desconectado" textFill="#ff0303">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
