@@ -88,24 +88,47 @@ public class FXMLDocumentController implements Initializable {
         this.TextFieldComunidad.setText(nombre);
     }
 
-    @FXML
-    private void ActionButtonAnterior(ActionEvent event) throws SQLException {
-        while(rs.isAfterLast()){
-               id = rs.getInt("id");
-         nombre = rs.getString("nombre");
-           this.TextFliedID.setText(""+id);
-        this.TextFieldComunidad.setText(nombre);
-        } 
+   @FXML
+    private void ActionButtonAnterior(ActionEvent event){
+        try {
+            if (rs.isFirst()) {
+                rs.last();
+                id = rs.getInt("id");
+                nombre = rs.getString("nombre");
+                this.TextFliedID.setText("" + id);
+                this.TextFieldComunidad.setText(nombre);
+            } else {
+                rs.previous();
+                id = rs.getInt("id");
+                nombre = rs.getString("nombre");
+                this.TextFliedID.setText("" + id);
+                this.TextFieldComunidad.setText(nombre);
+            }
+
+        } catch (SQLException ex) {
+
+        }
     }
 
     @FXML
-    private void ActionButtonSiguiente(ActionEvent event) throws SQLException {
-        while(rs.next()){
-               id = rs.getInt("id");
-         nombre = rs.getString("nombre");
-           this.TextFliedID.setText(""+id);
-        this.TextFieldComunidad.setText(nombre);
-        } 
+    private void ActionButtonSiguiente(ActionEvent event) {
+        try {
+            if (rs.isLast()) {
+                rs.first();
+                id = rs.getInt("id");
+                nombre = rs.getString("nombre");
+                this.TextFliedID.setText("" + id);
+                this.TextFieldComunidad.setText(nombre);
+            } else {
+                rs.next();
+                id = rs.getInt("id");
+                nombre = rs.getString("nombre");
+                this.TextFliedID.setText("" + id);
+                this.TextFieldComunidad.setText(nombre);
+            }
+        } catch (SQLException ex) {
+
+        }
     }
 
     @FXML
